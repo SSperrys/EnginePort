@@ -1,0 +1,126 @@
+<!-- Gearbox Design Section -->
+<section id="gearbox-design" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Gearbox Design</h2>
+
+    <!-- Summary -->
+    <p class="text-gray-800 mb-6">
+      I began by selecting target speeds and power which were 1,750 RPM at 15 HP in, and 85 RPM out. I decided to go with compound-reverted gear train with identical stage reductions [GIVE REASONING]. Using catalog gears for an initial layout, I picked a matching motor, keyway, and retaining rings. Next, I calculated forces and torques through each gear pair to the intermediate shaft, determined maximum bending moments in the principal planes, and checked the initial shaft diameter. Finding stresses and deflections out of spec, I increased the diameter, re-evaluated factors of safety (keyway FOS ≈ 2.5) and deflection, and converged on a final shaft size. Finally, I set bearing spacing, modeled the assembly in SOLIDWORKS, and ran FEA to verify the design.
+    </p>
+
+    <p class="text-gray-700 mb-8">
+      Mathematical Calcluations to 
+    </p>
+
+    <!-- LaTeX formulas (MathJax/KaTeX) -->
+    <div class="prose prose-lg mx-auto text-left">
+      <p>Input and Output RPM/HP:</p>
+      <p>$$
+        \begin{aligned}
+        \omega_\text{in} &= 1750, &
+        P_\text{in} &= 15,\\
+        \omega_\text{out} &= 85.
+        \end{aligned}
+      $$</p>
+  
+      <p>Overall gear ratio:</p>
+      <p>$$
+        e = \frac{\omega_\text{out}}{\omega_\text{in}}
+          = \frac{85}{1750}
+          = 0.04857,
+        \quad
+        e = \frac{1}{20.59}
+          = \frac{N_2 N_4}{N_3 N_5}.
+      $$</p>
+  
+      <p>Identical stage reductions (compound-reverted):</p>
+      <p>$$
+        \frac{N_2}{N_3} = \frac{N_4}{N_5},
+        \quad
+        e = \Bigl(\tfrac{N_2}{N_3}\Bigr)^2
+        \;\Longrightarrow\;
+        \frac{N_2}{N_3} = \sqrt{e} = \tfrac{1}{4.54}.
+      $$</p>
+  
+      <p>Teeth count (Lewis formula):</p>
+      <p>$$
+        m = 4.54,\;
+        \phi = 20^\circ,\;
+        k = 1,\\
+        N_p
+        = \frac{2k}{(1+2m)\sin^2\phi}
+          \Bigl(m + \sqrt{m^2+(1+2m)\sin^2\phi}\Bigr)
+        \approx 15.6 \approx 16,\\
+        N_2 = N_4 = 16,
+        \quad
+        N_3 = N_5 = N_p\,m \approx 72.
+      $$</p>
+  
+      <p>Speed check:</p>
+      <p>$$
+        \omega_\text{out}
+        = \Bigl(\tfrac{16}{72}\Bigr)^2 \cdot 1750
+        \approx 86.42\;\text{RPM}
+        \quad(\text{vs.\ }85\;\text{RPM}).
+      $$</p>
+  
+      <p>Torque:</p>
+      <p>$$
+        T_2
+        = \frac{P}{\omega_\text{in}}
+          \times \frac{550}{2\pi}
+          \times 60
+        \approx 45\;\mathrm{lbf\cdot ft},\\
+        T_3 = T_4 = 45\frac{1750}{388.9}\approx202,
+        \quad
+        T_5 = 45\frac{1750}{86.42}\approx911.2\;\mathrm{lbf\cdot ft}.
+      $$</p>
+  
+      <p>Force components:</p>
+      <p>$$
+        F_t = \frac{2T}{d},
+        \quad
+        F_n = F_t \tan\phi,
+        \\
+        F_{t2}=F_{t3}\approx270\;\mathrm{lbf},
+        \quad
+        F_{t4}=F_{t5}\approx1214.9\;\mathrm{lbf},
+        \\
+        F_{n2}=F_{n3}\approx98.3\;\mathrm{lbf},
+        \quad
+        F_{n4}=F_{n5}\approx442.2\;\mathrm{lbf}.
+      $$</p>
+  
+      <p>Max bending moment:</p>
+      <p>$$
+        M_{y,\max}=1180.5,
+        \quad
+        M_{z,\max}=-2600.9,\\
+        M_\max
+        = \sqrt{1180.5^2 + (-2600.9)^2}
+        \approx 3511.7\;\mathrm{lb\cdot in}.
+      $$</p>
+  
+      <p>Cylindrical roller bearing C₁₀ rating:</p>
+      <p>$$
+        C_{10}
+        = F_D \Bigl(\frac{L_D n_D 60}{10^6}\Bigr)^{1/3},
+        \;
+        L_D = 10{,}000,\;
+        n_D \approx 29.17,\\
+        C_{10(1)}\approx14.11,\;
+        C_{10(2)}\approx21.87,
+        \;
+        \text{required } \ge 28.6,
+        \;
+        \text{selected bore }=25\;\mathrm{mm}.
+      $$</p>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="#" onclick="goBackToMain()" class="inline-block px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition">
+        Back to Top
+      </a>
+    </div>
+  </div>
+</section>

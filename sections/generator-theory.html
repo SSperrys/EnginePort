@@ -1,0 +1,76 @@
+<!-- Theoretical Calculations Subsection -->
+<section id="generator-theory" style="display: none;" class="py-16 px-6 bg-[#f9f9f9]">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Theoretical Calculations</h2>
+    <p class="text-gray-700 mb-8">
+      We began by modeling power output vs. wind speed using Betz's law and blade element momentum theory. Our MATLAB scripts predicted peak efficiency at 8 m/s and a cut-in speed of 2 m/s.
+    </p>
+
+    <!-- Machine Parameters -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">Generator Parameters</h2>
+      <p class="text-gray-4x1 mb-8">
+        Poles: 8  |  Teeth: 9  |  Tooth Length: 0.6"  |  Radial Depth: 0.2"  |  Windings:  200
+      </p>
+  
+    
+    <!-- Key Formulas -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">Key Formulas</h2>
+      <p class="mb-2">
+        From Faraday's law for a rotating coil, the peak emf is:
+      </p>
+      <div class="border-gray-200 rounded p-4 font-mono overflow-x-auto">
+        \(E_{\text{coil}} = N \, B \, A \, \omega\)
+      </div>
+      <p class="italic text-gray-600 mt-2">where:</p>
+
+      <p class="text-gray-4x1 mb-8">
+        \(N\) = turns per coil  |  \(B\) = flux density (Tesla)  |  \(A\) = coil area (m<sup>2</sup>)  |  \(\omega\) = angular speed (rad/s)
+      </p>
+  
+      
+    
+    <!-- Numerical Example -->
+    <section>
+      <h2 class="text-2xl font-bold mb-3">Numerical Calculation</h2>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>
+          <strong>Convert dimensions to meters:</strong><br/>
+          \(l = 0.6″ \times 0.0254 = 0.01524\ \mathrm{m},\)
+          \(r = 0.2″ \times 0.0254 = 0.00508\ \mathrm{m}\)
+        </li>
+        <li>
+          <strong>Compute coil area:</strong><br/>
+          \(A = l \times r = 7.74\times10^{-5}\ \mathrm{m}^2\)
+        </li>
+        <li>
+          <strong>Single‐coil emf:</strong><br/>
+          \[
+            E_{\text{coil}}
+            = 200 \times 0.4 \times 7.74\times10^{-5} \times 200
+            \approx 1.24\ \mathrm{V}
+          \]
+        </li>
+        <li>
+          <strong>Total series voltage (9 coils):</strong><br/>
+          \[
+            E_{\text{total}}
+            = 9 \times E_{\text{coil}}
+            \approx 9 \times 1.24 = 11.16\ \mathrm{V}
+          \]
+        </li>
+      </ol>
+    </section>
+
+    <p class="text-black-500 mb-10 text-left md:text-center">
+      These calculations are the expected maximum voltage outputs that we can expect from the realized version of this generator. So, in theory, I expected my generator to induce a total of 11.16V.
+    </p>
+    <div class="mt-10 text-center">
+      <button onclick="showSection('generator-competition')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Generator Competition
+      </button>
+    </div>
+  </div>
+</section>

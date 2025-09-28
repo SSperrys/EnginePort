@@ -1,0 +1,36 @@
+<!-- Generator Competition Section -->
+<section id="generator-competition" style="display: none;" class="py-16 px-6 text-center bg-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Wind Generator Competition</h2>
+    <p class="text-gray-700 mb-6">
+      For this design challenge, we were all given a standard set of magnets, PLA, shaft, and bearings. The competition required us to design our own generator in any way we wanted. For this competition, we standardized the generator to fit in the 1'x 1' wind tunnel with a standardized blade profile. The competition was based on the 1W cut in speed, the power generated at 8 m/s and 10 m/s.
+    </p>
+    <img 
+    src="pictures/windturbine" 
+    alt="Hand with Sensor" 
+    class="w-full md:w-3/4 lg:w-1/2 mx-auto rounded-xl mb-8"
+  />
+
+    <p class="text-gray-700 mb-6">
+       The goal of my design was to create the most compact generator minimizing the usages of PLA and creating the most power. I have decided to go with a 8 pole 9 tooth radial flux generator using the wye winding technique. 
+    </p>
+
+    <!-- Nav Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 md:grid md:grid-cols-4 md:gap-4 max-w-3xl mx-auto mb-10">
+      <button onclick="showSection('generator-theory')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+        Theoretical Calculations
+      </button>
+      <button onclick="showSection('generator-mechanical')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+        Mechanical Design
+      </button>
+      <button onclick="showSection('generator-results')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+        Results
+      </button>
+      <button onclick="goBackToMain()" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">Back</button>
+
+    </div>
+  </div>
+</section>

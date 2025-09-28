@@ -1,0 +1,36 @@
+<!-- Results Subsection -->
+<section id="generator-results" style="display: none;" class="py-16 px-6 bg-[#f9f9f9]">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Competition Results</h2>
+
+    <img src="/pictures/drawing-sheet3.png" 
+    onclick="openModal(this.src)"
+    class="rounded shadow-md w-full md:w-1/2 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      The generator was fabricated from individual CAD-designed components printed on a Prusa MK3 in PLA, then assembled into a fully functional unit. This build provided invaluable hands-on feedback: print orientation and speed settings had to be balanced against the mechanical requirements of each part, PLA's dimensional shrinkage demanded tighter tolerances on the stator to rotor clearance, and the expanding stator teeth occasionally interfered with the rotor's smooth rotation.
+
+During assembly, one notable challenge arose when the shell printed too flexibly, compromising the structural integrity of the outer casing. With limited printer capacity and project time constraints preventing a quick reprint at an enlarged diameter, a practical field fix was devised: thinly applied epoxy coating around the shell halves stiffened the PLA just enough to restore rigidity without obscuring critical clearances.
+
+Overall, this project underscored the iterative nature of rapid-prototyping and the comparison of my flawless digital designs to reality. Moving forward, I plan to adjust shell dimensions for greater stiffness, optimize print settings for dimensional accuracy, and incorporate even finer clearance adjustments between stator teeth and rotor magnets.
+    </p>
+
+    <p class="text-gray-700 mb-8">
+      Enjoy the short video of my generator competing in the 8 m/s windspeed.
+    </p>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/generator-competition.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      Overall, my generator achieved a cut in speed of 3.68 m/s and produced 10.52 W at 8 m/s and 17.83 W at 10 m/s on a resistive load bank. In the competition across both engineering classes combined it placed third. Despite relying on minimal test prints and using as little PLA as possible, I was pleasantly surprised by its performance. The measured voltage output even exceeded my theoretical prediction, delivering 11.95 V versus the expected 11.16 V. I suspect this was because I ended up with slightly more than the intended 200 coils due to a counting error. This competition was a phenomenal learning experience and a memory I'll always cherish.
+    </p>
+    <div class="mt-10 text-center">
+      <button onclick="showSection('generator-competition')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Generator Competition
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<!-- Senior Design Project Section -->
+<section id="senior-design" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+    <h2 class="text-3xl font-bold mb-4">AI Actuated Prosthetic Hand</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      A deep dive into the design, development, and implementation of my senior capstone engineering project.
+    </p>
+    <!-- Image -->
+    <img 
+      src="pictures/HandSensor.png" 
+      alt="Hand with Sensor" 
+      class="w-full md:w-3/4 lg:w-1/2 mx-auto rounded-xl mb-8"
+    />
+
+    <div class="w-full md:w-1/2 mx-auto text-center">
+      <h3 class="text-xl font-semibold mb-2">Overview</h3>
+      <p class="text-gray-700 mb-6">This project was a collaborative effort with a team of engineers to design and build a highly functional prosthetic hand—intentionally avoiding invasive technologies like brain implants or neural grafting within the budget of < $1200. We leveraged tools such as CAD, microcontrollers, reasearch, manufacturing and data analysis to validate our design. The system incorporated a Portenta camera running a trained AI model in Python, along with custom silicone and liquid metal sensor arrays, resulting in a responsive and practical prosthetic solution.</p>
+        
+  
+      <h3 class="text-2xl font-semibold mb-2">My Role</h3>
+      <p>
+        As the Electronics Team Lead, I was primarily responsible for the design, fabrication, and testing of the silicone and liquid metal sensor arrays, which were central to the prosthetic's functionality. I also led the development of a custom spin coater to ensure consistent sensor production. In collaboration with the mechanical team, I integrated both the sensor arrays and the Portenta camera into the prosthetic hand. While overseeing the development of the AI model used with the camera, I contributed to its training and integration into the control system. Additionally, I implemented PID control systems that used real-time data from both the sensors and camera to drive precise, responsive movements.
+      </p>
+    </div>
+    <div class="mt-10 text-center">
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <button onclick="showSection('sensor-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Sensor Design</button>
+      <button onclick="showSection('mechanical-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Mechanical Design</button>
+      <button onclick="showSection('portenta-camera')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Portenta AI Camera</button>
+      <button onclick="showSection('results-section')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Results</button>
+      <button onclick="goBackToMain()" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Back</button>
+    </div>
+            </div>
+  </div>
+</section>

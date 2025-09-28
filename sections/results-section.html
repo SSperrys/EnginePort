@@ -1,0 +1,112 @@
+<!-- Results Sub-Section -->
+<section id="results-section" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Results</h2>
+    <p class="text-gray-700 mb-6">
+      Although the project did not achieve complete success, significant milestones were accomplished that we are proud to highlight.
+    </p>
+
+    <!-- Force Response Calibration -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">Force Response Calibration</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/sensorpress.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      I was unable to claibrate the sensors using the test bed due to the stepper motor not shipping in time, I was still able to roughly adjust the sensors using calibrated weights.
+      In the showcase the plot of the live feedback between each of the sensor. 
+    </p>
+
+    <!-- Cross-Sensitivity Demonstration -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">Cross-Sensitivity Demonstration</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/sensorslow.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      By taking an average value of all the values from the sensors, we can determine an angled force on the grid of sensors. As the cup presses against the silicone at an angle, we notice a jump within the average sensor values. However, once the cup equalizes the pressure on the grid, the values come back to zero. This can be ultized to adjust the grip based on an angled pressure on the fingertips of the arm.
+    </p>
+
+    <!-- Spin Coater Performance -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">Spin Coater Performance</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <img
+        src="/pictures/spincoaterpic.jpg"
+        alt="Spin Coater Uniformity"
+        onclick="openModal(this.src)"
+        class="rounded shadow-md w-full object-cover transform transition duration-300 hover:scale-105 cursor-pointer"
+      />
+    </div>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/spincoatervid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      The spin coater produced silicone layers with ±2 mm thickness variation. With adjustable speeds, presets were made to make repeatable sheets of silicone at varying thicknesses.
+    </p>
+
+    <!-- AI Camera Angle Detection -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">AI Camera Angle Detection</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/aicam.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      Our TinyML model correctly identified object orientation over 90% of the time at 30 FPS. The prosthetic uses this real-time angle data to adjust wrist position before gripping.
+    </p>
+
+    <!-- U-Joint Wrist Option Test -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">U-Joint Wrist Option Test</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/ujointresult.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      The U-joint mechanism delivered smooth flexion/extension across a 0–45° range with minimal backlash (<3°). Its spring-return design reliably reset to neutral between grips.
+    </p>
+
+    <!-- Monopole Wrist Option Test -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">Monopole Wrist Option Test</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/monowrist.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      The monopole gear setup achieved two degrees of freedom but due to the 3D printed gears and the lack of a shaft collar, the motor began to stall and showed gears slipped. However, in the future, creating the gears using a cnc or injection molding will be most optimal. 
+    </p>
+
+    <!-- Final Assembly Demonstration -->
+    <h3 class="text-2xl font-semibold mt-10 mb-4">Final Assembly Demonstration</h3>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/finalvis.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      In the fully assembled prosthetic, the arm was unable to simultaneously actuate all nine servos due to battery limitations. Despite this challenge, each team achieved remarkable results within their respective areas. Overall, this project served as a valuable learning experience in team leadership and navigating technologies beyond our initial expertise.
+    </p>
+
+    <div class="mt-10 text-center">
+      <a
+        href="#"
+        onclick="showSection('senior-design')"
+        class="inline-block px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition"
+      >
+        Back to Senior Design
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+<section id="portenta-camera" style="display: none;" class="py-16 px-6 text-center bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Main Title + Purpose -->
+    <h2 class="text-3xl font-bold mb-4">Portenta AI Camera</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      We mounted a Portenta H7–powered camera within the palm to run an ultra-compact vision pipeline entirely on-device. Each 96×96 grayscale frame is pushed through four fixed preprocessing filters (auto-contrast, horizontal & vertical Sobel, local contrast) to normalize lighting and highlight edges, then into a tiny CNN feature extractor, and finally through a 64-unit regression head. The full model is only ~254 K parameters (~200 KB after quantization) and delivers sub-20 ms inference at 30 FPS—letting the prosthetic adjust its grip in real time without any external compute.
+    </p>
+
+    <!-- Portenta Board Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Portenta H7 Board</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/portenta-board.jpg" alt="Portenta H7 Board"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/3 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-6">
+      The Portenta H7 sports dual ARM Cortex®-M7/M4 cores plus Wi-Fi/Bluetooth and hardware TensorFlow-Lite support. We leverage its M7 for preprocessing and the M4 for inference, achieving a tight 15 ms per frame latency while keeping power usage under 200 mW.
+    </p>
+
+    <!-- Logic Flow Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Pipeline Logic Flow</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/portenta-flow.jpg" alt="AI Logic Flow Diagram"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-6 text-left max-w-4xl mx-auto">
+      1) **Preprocessing**: Auto-contrast & Sobel gradients + learnable local contrast → 5-channel 96×96 tensor<br>
+      2) **Feature Extractor**: Four Conv2D+ReLU blocks with pooling → flattened 3 872-dim vector (~6.5 K params)<br>
+      3) **Regression Head**: Dense(64)+ReLU → Dropout → Dense(1) (~248 K params)<br>
+      4) **Control Loop**: Output drives PID on grip/flex motors; cycle repeats until sensor feedback stabilizes.
+    </p>
+
+    <!-- Python vs. Cloud Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">On-Device vs. Cloud Inference</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/python-vs-cloud.jpg" alt="Python vs Cloud Architecture"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-6 text-left max-w-4xl mx-auto">
+      We compared running our TinyML pipeline in MicroPython on the Portenta (≈15 ms/frame) against a cloud approach (MQTT+REST, ≈120 ms round-trip). On-device wins on latency, reliability, and offline operation, with no network dependency.
+    </p>
+
+    <!-- Model Training Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Model Training</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/model-training.jpg" alt="Model Training Workflow"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      We gathered ~5 000 labeled hand-object images under varied lighting, trained our custom CNN end-to-end in Python (TensorFlow), then applied pruning & quantization to fit the final ~200 KB TFLite model. This preserves accuracy while meeting the Portenta's flash and RAM constraints.
+    </p>
+
+    <!-- Back Button -->
+    <div class="mt-10 text-center">
+      <button onclick="showSection('senior-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Senior Design
+      </button>
+    </div>
+
+  </div>
+</section>
