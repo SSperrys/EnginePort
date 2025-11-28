@@ -4,7 +4,7 @@
     <!-- Main Title + Purpose -->
     <h2 class="text-3xl font-bold mb-4">Portenta AI Camera</h2>
     <p class="text-lg text-gray-700 mb-6">
-      We mounted a Portenta H7–powered camera within the palm to run an ultra-compact vision pipeline entirely on-device. Each 96×96 grayscale frame is pushed through four fixed preprocessing filters (auto-contrast, horizontal & vertical Sobel, local contrast) to normalize lighting and highlight edges, then into a tiny CNN feature extractor, and finally through a 64-unit regression head. The full model is only ~254 K parameters (~200 KB after quantization) and delivers sub-20 ms inference at 30 FPS—letting the prosthetic adjust its grip in real time without any external compute.
+      Portenta camera is compact delivering 20 ms inference at 30 FPS letting prosthetic compute grip adjustment without external computing.
     </p>
 
     <!-- Portenta Board Subsection -->
@@ -15,7 +15,7 @@
            class="rounded shadow-md w-full md:w-1/3 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     </div>
     <p class="text-gray-700 mb-6">
-      The Portenta H7 sports dual ARM Cortex®-M7/M4 cores plus Wi-Fi/Bluetooth and hardware TensorFlow-Lite support. We leverage its M7 for preprocessing and the M4 for inference, achieving a tight 15 ms per frame latency while keeping power usage under 200 mW.
+      Porteta H7 Board supports Wi-Fi/Bluetooth as well as TensorFlow-Lite. Boasts strong processing power while keeping power usage minimal.
     </p>
 
     <!-- Logic Flow Subsection -->
@@ -40,7 +40,7 @@
            class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     </div>
     <p class="text-gray-700 mb-6 text-left max-w-4xl mx-auto">
-      We compared running our TinyML pipeline in MicroPython on the Portenta (≈15 ms/frame) against a cloud approach (MQTT+REST, ≈120 ms round-trip). On-device wins on latency, reliability, and offline operation, with no network dependency.
+      Cloud approach vs TinyML pipline the cloud approach was simpler but had a large latency and no network dependancy compared to on device option.
     </p>
 
     <!-- Model Training Subsection -->
@@ -51,7 +51,7 @@
            class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     </div>
     <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
-      We gathered ~5 000 labeled hand-object images under varied lighting, trained our custom CNN end-to-end in Python (TensorFlow), then applied pruning & quantization to fit the final ~200 KB TFLite model. This preserves accuracy while meeting the Portenta's flash and RAM constraints.
+      Gathered ~5,000 object images under varied conditions to train the custom model.
     </p>
 
     <!-- Back Button -->

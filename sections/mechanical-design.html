@@ -4,7 +4,7 @@
     <h2 class="text-3xl font-bold mb-4">Mechanical Design</h2>
 
     <p class="text-gray-700 mb-6">
-      The mechanical development of the prosthetic hand was led by Noah Tuitavuki, with support from David Rico and Michael Huang. The team focused on improving the wrist's functionality by increasing its Degrees of Freedom (DOF) from 1 to 3 compared to the previous year's design. A string pulley system was used to efficiently actuate both the fingers and wrist, enhancing the prosthetic's range of motion and dexterity
+      The mechanical development of the prosthetic hand was led by Noah Tuitavuki, with support from David Rico and Michael Huang. The team focused on improving the wrist's functionality by increasing its Degrees of Freedom (DOF) from 1 to 3 compared to the previous year's design.
     </p>
 
     <!-- Divider -->
@@ -22,7 +22,7 @@
             </div>
 
             <p class="text-gray-700 mb-6">
-              For the wrist mechanism options, we designed two different approaches. The first is a U-joint design, where the wrist movement is controlled by string-driven pulleys that pull the wrist downward. It returns to its initial position through two springs placed on either side of the joint. The second option is a monopole gear mechanism, utilizing a motor-driven gear to actuate an internal worm gear and differential gear assembly, providing the wrist with three degrees of freedom (3 DOF).
+              Comparing U-joint option vs monopole gear
             </p>
 
     <!-- Divider -->
@@ -50,7 +50,7 @@
 
     <!-- Text Below -->
     <p class="text-gray-700 max-w-4xl mx-auto mb-12 text-lg text-left">
-      The updated wrist design integrates parallel linkages and a tendon routing system that preserves alignment under torque. Special care was taken to reduce backlash and minimize friction at joints, ensuring a smooth range of motion during grasping and release.
+      Utilizes a pulley system with springs to bring the wrist to the original position. Provides 3 DOF.
     </p>
 
     <!-- Divider -->
@@ -78,7 +78,7 @@
 
     <!-- Text Below -->
     <p class="text-gray-700 max-w-4xl mx-auto mb-12 text-lg text-left">
-      The wrist mechanism utilizes a monopole sphere gear design, where movement is driven by a motor-actuated internal worm gear combined with a differential gear assembly. Currently, this design achieves two degrees of freedom (2 DOF). However, with the integration of a fully spherical monopole gear and two distinct actuation points, the wrist mechanism can potentially achieve the full three degrees of freedom (3 DOF). One of the main flaws of this design is the difficulties of having wires from the Portenta board to the main controller
+      Utilizes a set of gears to actuate the main wrist gears in 2 DOFs.
     </p>
 
     <!-- Divider -->
@@ -97,7 +97,7 @@
 
     <!-- Text Section -->
     <p class="text-gray-700 max-w-4xl mx-auto mb-12 text-lg text-left">
-      The mechanism includes a wrist-swapping feature, allowing for fluid testing of different joint configurations without needing additional parts or separate arms for each wrist design.
+      Forearm swapping system to allow for simpified testing of the U-joint vs the Gear option.
     </p>
 
     <!-- Forearm Section -->
@@ -106,7 +106,7 @@
           onclick="openModal(this.src)"
           class="rounded shadow-md w-full h-64 object-cover transform transition duration-300 hover:scale-105 cursor-pointer mb-6" />
       <p class="text-gray-700 text-lg text-left">
-        The fully assemebled design of the prosthetic hand utilizes a Portenta board for the ai camera, a arduino nano to read the sensors with a Raspberry Pi has a maincontroller to adjust the servos. However, for the sake of team seperation and simiplicity the current design uses a nano to control the servos, PYBv1.1 to maintain and test sensor feedback, the portenta to develop the AI camera, and an external Raspberry Pi to control the arm. 
+        Fully assembled prosthetic hand with silicone liquid metal sensors and AI camera utiliozing the U-joint wrist option.
       </p>
     </div>
 
