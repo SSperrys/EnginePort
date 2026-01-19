@@ -4,7 +4,8 @@
     <!-- Main Title + Purpose -->
     <h2 class="text-3xl font-bold mb-4">Portenta AI Camera</h2>
     <p class="text-lg text-gray-700 mb-6">
-      Portenta camera is compact delivering 20 ms inference at 30 FPS letting prosthetic compute grip adjustment without external computing.
+      By Riley Tillman
+      Portenta vision shield camera is compact and delivers 20 ms inference at 30 FPS letting prosthetic compute grip adjustment without external computing.
     </p>
 
     <!-- Portenta Board Subsection -->
@@ -19,23 +20,23 @@
     </p>
 
     <!-- Logic Flow Subsection -->
-    <h3 class="text-2xl font-semibold mt-12 mb-4">Pipeline Logic Flow</h3>
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Custom AI Algorithim</h3>
     <div class="flex justify-center mb-8">
-      <img src="pictures/portenta-flow.jpg" alt="AI Logic Flow Diagram"
+      <img src="pictures/custom-alg.png" alt="Custom AI Algorithim"
            onclick="openModal(this.src)"
            class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     </div>
     <p class="text-gray-700 mb-6 text-left max-w-4xl mx-auto">
-      1) **Preprocessing**: Auto-contrast & Sobel gradients + learnable local contrast → 5-channel 96×96 tensor<br>
-      2) **Feature Extractor**: Four Conv2D+ReLU blocks with pooling → flattened 3 872-dim vector (~6.5 K params)<br>
-      3) **Regression Head**: Dense(64)+ReLU → Dropout → Dense(1) (~248 K params)<br>
-      4) **Control Loop**: Output drives PID on grip/flex motors; cycle repeats until sensor feedback stabilizes.
+      4 Custom preprocessing layers
+      4 Image convolution layers
+      1 Dense layer
+      VM for model with Http image data stream
     </p>
 
     <!-- Python vs. Cloud Subsection -->
     <h3 class="text-2xl font-semibold mt-12 mb-4">On-Device vs. Cloud Inference</h3>
     <div class="flex justify-center mb-8">
-      <img src="pictures/python-vs-cloud.jpg" alt="Python vs Cloud Architecture"
+      <img src="pictures/cloudai.png" alt="Python vs Cloud Architecture"
            onclick="openModal(this.src)"
            class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     </div>
@@ -46,12 +47,15 @@
     <!-- Model Training Subsection -->
     <h3 class="text-2xl font-semibold mt-12 mb-4">Model Training</h3>
     <div class="flex justify-center mb-8">
-      <img src="pictures/model-training.jpg" alt="Model Training Workflow"
+      <img src="pictures/ai-model-train.jpg" alt="Model Training Workflow"
            onclick="openModal(this.src)"
            class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     </div>
     <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
-      Gathered ~5,000 object images under varied conditions to train the custom model.
+      Gathered ~500 object images under varied conditions with semi-automated tracing to train the custom model.
+    </p>
+    <p>
+      GitHUB LINK
     </p>
 
     <!-- Back Button -->
