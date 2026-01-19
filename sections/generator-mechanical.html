@@ -8,7 +8,7 @@
 
     <!-- CAD Model -->
     <h3 class="text-2xl font-semibold mb-4">CAD Model Overview</h3>
-    <img src="/pictures/generator-cad-model.jpg" alt="CAD Model" 
+    <img src="/pictures/GeneratorCAD.png" alt="CAD Model" 
          onclick="openModal(this.src)"
          class="rounded shadow-md w-full md:w-2/3 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     <p class="text-gray-700 mb-10 text-left md:text-center">
@@ -17,14 +17,21 @@
 
     <!-- Drawing Sheet 1 -->
     <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 1: Shell </h3>
-    <img src="/pictures/drawing-sheet1.png" alt="Hub & Shaft Drawing"
+    <img src="/pictures/GeneratorDWG.png" alt="Hub & Shaft Drawing"
          onclick="openModal(this.src)"
          class="rounded shadow-md w-full md:w-1/2 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
     <p class="text-gray-700 mb-10 text-left md:text-center">
-      The shell inner diameter was minimized to keep the stator coils close to the rotor while also minimizing PLA usage. The design allows for each coil to be removeable with a slight interference fit for testing and replacement.
-    </p>
+      Shell: The shell inner diameter was minimized to keep the stator coils close to the rotor while also minimizing PLA usage. The design allows for each coil to be removeable with a slight interference fit for testing and replacement.
 
-    <!-- Drawing Sheet 2 -->
+      Stator Teeth: The stator teeth enter the slots of the shell with a removeable pole to allow connection on a power drill for compact windings.
+
+      Rotor: The rotor design is a 8-pole rotor minimizing the space between each magnet to keep flux leakage minimal.
+
+      Caps: The caps were designed to be aerodynamic to ensure minimal interference on the blades. They were also considered to allow airflow to cool the coils in the case of overheating.
+
+    </p>
+<!--     
+   
     <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 2: Stator Teeth</h3>
     <img src="/pictures/drawing-sheet2.png" alt="Blade Profile Drawing"
          onclick="openModal(this.src)"
@@ -33,7 +40,7 @@
       The stator teeth enter the slots of the shell with a removeable pole to allow connection on a power drill for compact windings.
     </p>
 
-    <!-- Drawing Sheet 3 -->
+    
     <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 3: Rotor</h3>
     <img src="/pictures/drawing-sheet3.png" alt="Tail & Bearing Mount Drawing"
          onclick="openModal(this.src)"
@@ -42,7 +49,7 @@
       The rotor design is a 8-pole rotor minimizing the space between each magnet to keep flux leakage minimal.
     </p>
 
-    <!-- Drawing Sheet 4 -->
+    
     <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 4: Shell Caps</h3>
     <img src="/pictures/drawing-sheet4.png" alt="Assembly Exploded View"
          onclick="openModal(this.src)"
@@ -50,7 +57,7 @@
     <p class="text-gray-700 mb-10 text-left md:text-center">
       The caps were designed to be aerodynamic to ensure minimal interference on the blades. They were also considered to allow airflow to cool the coils in the case of overheating.
     </p>
-
+      -->
     <!-- Back Button -->
     <div class="mt-10 text-center">
       <button onclick="showSection('generator-competition')" 
