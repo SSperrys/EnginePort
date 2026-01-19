@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucas Cho | Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <!-- Image Modal -->
+<div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden">
+  <span onclick="closeModal()" class="absolute top-4 right-6 text-white text-3xl font-bold cursor-pointer">&times;</span>
+  <img id="modalImage" src="" class="max-w-full max-h-screen rounded shadow-lg" />
+</div>
+
+  <body class="bg-[#FFFFFF0D] text-gray-900">
+    <script>
+      function showSection(idToShow) {
+        const allSections = [
+          "main-content", "main-footer",
+          "senior-design", "generator-competition", "gearbox-design",
+          "sensor-design", "mechanical-design", "portenta-camera", "results-section",
+          "generator-theory", "generator-mechanical", "generator-results"
+        ];
+        allSections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = "none";
+        });
+        const target = document.getElementById(idToShow);
+        if (target) {
+          target.style.display = "block";
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    
+      function goBackToMain() {
+        const mainSections = ["main-content", "main-footer"];
+        const subSections = [
+          "senior-design", "generator-competition", "gearbox-design",
+          "sensor-design", "mechanical-design", "portenta-camera", "results-section",
+          "generator-theory", "generator-mechanical", "generator-results"
+        ];
+        mainSections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = "block";
+        });
+        subSections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = "none";
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    
+      function openModal(imageSrc) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        modalImg.src = imageSrc;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+    
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+    
+      document.addEventListener("keydown", function(e) {
+        const modal = document.getElementById("imageModal");
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+    </script>
+    
+    <div id="main-content">
+      <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 py-16">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl font-bold mb-4">Lucas Cho</h1>
+          <p class="text-lg text-gray-700 mb-6">
+            Welcome to my engineering portfolio. Explore the projects below to learn more about my work.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 md:grid md:grid-cols-4 md:gap-4 max-w-3xl mx-auto">
+              <a href="#" onclick="showSection('senior-design')"
+                class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+                Senior Thesis
+              </a>
+              <a href="#" onclick="showSection('generator-competition')"
+                class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+                Generator Competition
+              </a>
+              <a href="#" onclick="showSection('gearbox-design')"
+                class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+                Gearbox Design
+              </a>
+              <a href="#" onclick="showSection('mechatronics')"
+                class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+                Mechatronics Car Design
+              </a>
+            </div>
+                    
+        
+        </div>
+      </section>
+    </div>
+      
+<!-- Contact Section -->
+<footer id="main-footer" class="py-12 px-6 md:px-12 bg-[#f3f4f6]">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-xl font-semibold mb-4 text-[#000000]">Get in Touch</h2>
+    <div class="flex flex-wrap justify-center gap-4 mb-6">
+      <a
+        href="#"
+        class="px-6 py-3 bg-[#2563EB] text-[#ffffff] rounded-xl hover:bg-[#1D4ED8] transition"
+        >Email</a
+      >
+      <a
+        href="#"
+        class="px-6 py-3 bg-[#1F2937] text-[#ffffff] rounded-xl hover:bg-[#111827] transition"
+        >Resume</a
+      >
+      <a
+        href="#"
+        class="px-6 py-3 bg-[#E5E7EB] text-[#1F2937] rounded-xl hover:bg-[#D1D5DB] transition"
+        >GitHub</a
+      >
+    </div>
+    <div class="flex justify-center gap-6 mb-4">
+      <!-- Example icon with customizable color -->
+      <a
+        href="#"
+        class="text-[#1DA1F2] hover:opacity-80"
+        aria-label="Twitter"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53..." />
+        </svg>
+      </a>
+      <!-- Add more icons (LinkedIn, GitHub, Email, etc.) with your custom hex colors -->
+    </div>
+    <p class="text-[#6b7280]">© 2025 Lucas Cho</p>
+  </div>
+</footer>
+
+    <!-- Senior Design Project Section -->
+<section id="senior-design" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+        <h2 class="text-3xl font-bold mb-4">AI Actuated Prosthetic Hand</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          A deep dive into the design, development, and implementation of my senior capstone engineering project.
+        </p>
+        <!-- Image -->
+        <img 
+          src="pictures/HandSensor.png" 
+          alt="Hand with Sensor" 
+          class="w-full md:w-3/4 lg:w-1/2 mx-auto rounded-xl mb-8"
+        />
+
+        <div class="w-full md:w-1/2 mx-auto text-center">
+          <h3 class="text-xl font-semibold mb-2">Overview</h3>
+          <p class="text-gray-700 mb-6">This project was a collaborative effort with a team of engineers to design and build a highly functional prosthetic hand—intentionally avoiding invasive technologies like brain implants or neural grafting within the budget of < $1200. We leveraged tools such as CAD, microcontrollers, reasearch, manufacturing and data analysis to validate our design. The system incorporated a Portenta camera running a trained AI model in Python, along with custom silicone and liquid metal sensor arrays, resulting in a responsive and practical prosthetic solution.</p>
+            
+      
+          <h3 class="text-2xl font-semibold mb-2">My Role</h3>
+          <p>
+            As the Electronics Team Lead, I was primarily responsible for the design, fabrication, and testing of the silicone and liquid metal sensor arrays, which were central to the prosthetic’s functionality. I also led the development of a custom spin coater to ensure consistent sensor production. In collaboration with the mechanical team, I integrated both the sensor arrays and the Portenta camera into the prosthetic hand. While overseeing the development of the AI model used with the camera, I contributed to its training and integration into the control system. Additionally, I implemented PID control systems that used real-time data from both the sensors and camera to drive precise, responsive movements.
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+          <button onclick="showSection('sensor-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Sensor Design</button>
+          <button onclick="showSection('mechanical-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Mechanical Design</button>
+          <button onclick="showSection('portenta-camera')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Portenta AI Camera</button>
+          <button onclick="showSection('results-section')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Results</button>
+          <button onclick="goBackToMain()" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-md hover:bg-[#111827] transition">Back</button>
+        </div>
+                </div>
+      </div>
+    </section>
+
+    <section id="sensor-design" style="display: none;" class="min-h-screen overflow-y-auto py-16 px-6 md:px-12 text-center bg-[#f3f4f6] text-[#1a1a1a]">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Stretchable Electronic Sensors</h2>
+        <p class="mb-12 text-gray-700">
+          I've developed force-resistive sensors that utilize a silicone-based elastomer embedded with microchannels filled with Galinstan, a liquid metal alloy. These channels form a conductive network whose electrical resistance changes in response to applied pressure, functioning similarly to traditional strain gauges. These sensors were made of silicone and placed onto the fingertips of the prosthetic hand to mimic the mechanoreceptors of a real finger.
+        </p>
+    
+        <!-- Sensor Image Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+          <img src="/pictures/New.png" alt="Sensor 1"
+              onclick="openModal(this.src)"
+              class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+          <img src="/pictures/AbsSensor.jpg" alt="Sensor 2"
+              onclick="openModal(this.src)"
+              class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+          <img src="/pictures/CleanSensor.png" alt="Sensor 3"
+              onclick="openModal(this.src)"
+              class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+          <img src="/pictures/Picture1z.jpg" alt="Sensor 4"
+              onclick="openModal(this.src)"
+              class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+        </div>
+        <p class="text-sm text-gray-600 italic mb-12">(Dimensions in inches)</p>
+
+    
+        <!-- Formula -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 text-left max-w-6xl mx-auto">
+        <!-- Formula Image -->
+        <img 
+          src="/pictures/formula.jpg" 
+          alt="Sensor Formula" 
+          onclick="openModal(this.src)"
+          class="rounded shadow-md w-full md:w-1/3 max-w-sm object-cover transform transition duration-300 hover:scale-105 cursor-pointer" 
+        />
+
+          <!-- Text -->
+          <p class="text-gray-700 text-lg">
+            Using a derived form of Ohm’s law, I calculated strain-dependent changes in resistivity to engineer tailored electrical responses across different sensors. By varying both the cross-sectional area and the number of conductive loops, I created distinguishable behaviors between the top and bottom rows of sensors due to how pressing a bottom sensor will trigger the other three sensors. With distinguished cross-sections, I was able to showcase eash effect that pressing a sensor had on the other three.
+          </p>
+        </div>
+        
+    
+        <!-- Sensor Wiring Diagram in Row -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 text-left max-w-6xl mx-auto">
+        <!-- Circuit Diagram -->
+        <img 
+          src="/pictures/circuit.jpg" 
+          alt="Wiring Diagram" 
+          onclick="openModal(this.src)"
+          class="rounded shadow-md w-full md:w-1/3 max-w-sm object-cover transform transition duration-300 hover:scale-105 cursor-pointer" 
+        />
+
+          <!-- Text -->
+          <p class="text-gray-700 text-lg">
+            To optimize wiring and minimize hardware complexity, I implemented a row-column scanning method, enabling the control of the sensor array using just two inputs and two outputs. By rapidly pulsing rows on and off, I achieved efficient sensor activation and readout. This approach also allows for future scalability using a multiplexer (MUX) to support larger sensor networks.
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16" />
+
+        <h3 class="text-2xl font-semibold mb-8">Sensor Manufacturing Process</h3>
+
+       <!-- Single image with left-aligned text in a row -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12 text-left max-w-6xl mx-auto">
+        <!-- Image -->
+        <img src="/pictures/Screenshot 2025-04-15 231111.png" alt="Sensor Process"
+            class="w-full md:w-1/2 rounded shadow-md" />
+
+        <!-- Text -->
+        <p class="text-gray-700 text-lg md:w-1/2">
+          The fabrication process involved creating silicone sheets cast over 3D-printed ABS circuit patterns. Once cured, the silicone was submerged in acetone to dissolve the ABS, leaving behind embedded channel structures. After sufficient dissolution and flushing, Galinstan was injected into the channels using a syringe, and the ends were sealed with wires and silicone adhesive to form functional liquid metal sensors.
+        </p>
+      </div>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16" />
+
+
+
+    
+        <!-- Manufacturing Process Cards -->
+        <h3 class="text-2xl font-semibold mb-8">Sensor Silicone Manufacturing</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <!-- Spin Coater -->
+          <div>
+            <img src="/pictures/Picture2.jpg" alt="Spin Coater" onclick="openModal(this.src)" class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+            <h4 class="text-lg font-semibold mb-2">Spin Coater</h4>
+            <p class="text-gray-700 text-sm">
+              One approach we explored for sensor fabrication involved designing a controlled spin coater, which utilized centrifugal force to produce uniform silicone layers. By adjusting the spin speed, we were able to precisely control the thickness of each layer.
+            </p>
+          </div>
+    
+          <!-- Blade Coating -->
+          <div>
+            <img src="/pictures/Picture3.jpg" alt="Blade Coating" onclick="openModal(this.src)" class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+            <h4 class="text-lg font-semibold mb-2">Blade Coating</h4>
+            <p class="text-gray-700 text-sm">
+              A preliminary method for fabricating uniform silicone layers involved using a precision blade coater to evenly spread the material into thin sheets, followed by curing with a heat gun to achieve consistent thickness and flexibility.
+            </p>
+          </div>
+    
+          <!-- CNC Mold -->
+          <div>
+            <img src="/pictures/Picture4.png" alt="CNC Mold" onclick="openModal(this.src)" class="rounded shadow-md w-full h-48 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+            <h4 class="text-lg font-semibold mb-2">CNC Aluminum Mold</h4>
+            <p class="text-gray-700 text-sm">
+              An aluminum mold was fabricated using CNC machining to enable precise and repeatable production of silicone samples. This method serves as the intended manufacturing approach for scaled production once the optimal sensor design is finalized.
+            </p>
+          </div>
+        </div>
+
+        <!-- Spacer -->
+        <div class="my-16"></div>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        </div>
+
+        <div class="col-span-3">
+          <h3 class="text-2xl font-semibold mb-8">Sensor Calibration</h3>
+          <div class="flex justify-center mb-6">
+            <img src="/pictures/testbed3.jpg" alt="Sensor Test Bed" onclick="openModal(this.src)"
+                 class="rounded shadow-md w-full h-auto object-contain transform transition duration-300 hover:scale-102 cursor-pointer" />
+          </div>
+                    <p class = "text-gray-700-lg">
+            To calibrate each sensor individually within the 2×2 array, I designed a custom test bed using a stepper motor and a load cell to apply precise, controlled forces to each sensing element. This setup also allowed us to observe cross-sensitivity effects, enabling a deeper understanding of how one sensor’s response could influence neighboring sensors.
+          </p>
+        </div>
+
+        <!-- Wrist Grip Logic Section -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-16 mb-12 text-left max-w-6xl mx-auto">
+          <!-- Image -->
+          <img src="/pictures/sensorlogic.png" alt="Wrist Grip Logic Diagram"
+              onclick="openModal(this.src)"
+              class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+
+          <!-- Text -->
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Wrist Grip Logic</h3>
+            <p class="text-gray-700 text-lg">
+              The stretchable electronic sensor used in this project is designed to detect both the angle at which the fingers contact a surface and the amount of force applied. Each finger is equipped with four individual sensors, enabling detailed feedback. When force is applied at an angle, these sensors provide readings indicating both the specific points of contact and the magnitude of force. Utilizing PID control methods, the prosthetic grip will slightly open and adjust the wrist position counterclockwise, specifically tailored for a right-hand prosthetic. If sensor readings indicate increasing force when rotating clockwise, the system responds by rotating the wrist counterclockwise. Following this adjustment, the grip closes, and sensor data is reassessed. This iterative process continues until the average sensor data stabilizes within the defined acceptable range. When sensor readings equalize, it indicates that all sensors are uniformly in contact with the object's surface, achieving an effective and secure grip.
+            </p>
+          </div>
+        </div>
+
+    
+        <!-- Back Button -->
+        <div class="mt-16">
+          <button onclick="showSection('senior-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+            Back to Senior Design
+          </button>
+        </div>
+      </div>
+    </section>
+    
+
+
+    <!-- Mechanical Design Sub-Section -->
+    <section id="mechanical-design" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Mechanical Design</h2>
+
+        <p class="text-gray-700 mb-6">
+          The mechanical development of the prosthetic hand was led by Noah Tuitavuki, with support from David Rico and Michael Huang. The team focused on improving the wrist’s functionality by increasing its Degrees of Freedom (DOF) from 1 to 3 compared to the previous year’s design. A string pulley system was used to efficiently actuate both the fingers and wrist, enhancing the prosthetic’s range of motion and dexterity
+        </p>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16" />
+
+        <h3 class="text-2xl font-semibold mb-8">Wrist Option Comparison</h3>
+                <!-- Two Images Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto mt-16 mb-12">
+                  <img src="/pictures/ujoint.jpg" alt="Mechanical Image 1"
+                      onclick="openModal(this.src)"
+                      class="rounded shadow-md w-full h-64 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+                  <img src="/pictures/monopic.png" alt="Mechanical Image 2"
+                      onclick="openModal(this.src)"
+                      class="rounded shadow-md w-full h-64 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+                </div>
+
+                <p class="text-gray-700 mb-6">
+                  For the wrist mechanism options, we designed two different approaches. The first is a U-joint design, where the wrist movement is controlled by string-driven pulleys that pull the wrist downward. It returns to its initial position through two springs placed on either side of the joint. The second option is a monopole gear mechanism, utilizing a motor-driven gear to actuate an internal worm gear and differential gear assembly, providing the wrist with three degrees of freedom (3 DOF).
+                </p>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16"
+
+        <!-- Subtitle -->
+        <h3 class="text-2xl font-semibold mb-8">U-Joint Wrist Option</h3>
+
+        <!-- Autoplay Looping Video -->
+        <div class="max-w-4xl mx-auto mb-12">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/ujointvid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+
+        <!-- Single Image Row -->
+        <div class="mx-auto mb-6 text-center">
+          <img src="/pictures/ujointlabels.jpg" alt="Mechanism 3"
+               onclick="openModal(this.src)"
+               class="rounded shadow-md transform transition duration-300 hover:scale-105 cursor-pointer inline-block" />
+        </div>
+        
+
+        <!-- Text Below -->
+        <p class="text-gray-700 max-w-4xl mx-auto mb-12 text-lg text-left">
+          The updated wrist design integrates parallel linkages and a tendon routing system that preserves alignment under torque. Special care was taken to reduce backlash and minimize friction at joints, ensuring a smooth range of motion during grasping and release.
+        </p>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16" />
+
+        <!-- Subtitle -->
+        <h3 class="text-2xl font-semibold mb-8">Monopole Inspired Gear Option</h3>
+
+        <!-- Autoplay Looping Video -->
+        <div class="max-w-4xl mx-auto mb-12">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/monovid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+
+        <!-- Single Image Row -->
+        <div class="mx-auto mb-6 text-center">
+          <img src="/pictures/mono.jpg" alt="Mechanism 3"
+               onclick="openModal(this.src)"
+               class="rounded shadow-md transform transition duration-300 hover:scale-105 cursor-pointer inline-block" />
+        </div>
+        
+
+        <!-- Text Below -->
+        <p class="text-gray-700 max-w-4xl mx-auto mb-12 text-lg text-left">
+          The wrist mechanism utilizes a monopole sphere gear design, where movement is driven by a motor-actuated internal worm gear combined with a differential gear assembly. Currently, this design achieves two degrees of freedom (2 DOF). However, with the integration of a fully spherical monopole gear and two distinct actuation points, the wrist mechanism can potentially achieve the full three degrees of freedom (3 DOF). One of the main flaws of this design is the difficulties of having wires from the Portenta board to the main controller
+        </p>
+
+        <!-- Divider -->
+        <hr class="border-t-4 border-gray-300 max-w-6xl mx-auto mb-16" />
+
+        <!-- Subtitle -->
+        <h3 class="text-2xl font-semibold mb-8">Wrist Swap Mechanisim</h3>
+
+        <!-- Autoplay Looping Video -->
+        <div class="max-w-4xl mx-auto mb-12">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/wristswap.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Text Section -->
+        <p class="text-gray-700 max-w-4xl mx-auto mb-12 text-lg text-left">
+          The mechanism includes a wrist-swapping feature, allowing for fluid testing of different joint configurations without needing additional parts or separate arms for each wrist design.
+        </p>
+
+        <!-- Forearm Section -->
+        <div class="max-w-6xl mx-auto">
+          <img src="/pictures/HandSensor.png" alt="Forearm Section"
+              onclick="openModal(this.src)"
+              class="rounded shadow-md w-full h-64 object-cover transform transition duration-300 hover:scale-105 cursor-pointer mb-6" />
+          <p class="text-gray-700 text-lg text-left">
+            The fully assemebled design of the prosthetic hand utilizes a Portenta board for the ai camera, a arduino nano to read the sensors with a Raspberry Pi has a maincontroller to adjust the servos. However, for the sake of team seperation and simiplicity the current design uses a nano to control the servos, PYBv1.1 to maintain and test sensor feedback, the portenta to develop the AI camera, and an external Raspberry Pi to control the arm. 
+          </p>
+        </div>
+
+
+        <div class="mt-10 text-center">
+          <a href="#" onclick="showSection('senior-design')" class="inline-block px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition">Back to Senior Design</a>
+        </div>
+      </div>
+    </section>
+
+<section id="portenta-camera" style="display: none;" class="py-16 px-6 text-center bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Main Title + Purpose -->
+    <h2 class="text-3xl font-bold mb-4">Portenta AI Camera</h2>
+    <p class="text-lg text-gray-700 mb-6">
+      We mounted a Portenta H7–powered camera within the palm to run an ultra-compact vision pipeline entirely on-device. Each 96×96 grayscale frame is pushed through four fixed preprocessing filters (auto-contrast, horizontal & vertical Sobel, local contrast) to normalize lighting and highlight edges, then into a tiny CNN feature extractor, and finally through a 64-unit regression head. The full model is only ~254 K parameters (~200 KB after quantization) and delivers sub-20 ms inference at 30 FPS—letting the prosthetic adjust its grip in real time without any external compute.
+    </p>
+
+    <!-- Portenta Board Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Portenta H7 Board</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/portenta-board.jpg" alt="Portenta H7 Board"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/3 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-6">
+      The Portenta H7 sports dual ARM Cortex®-M7/M4 cores plus Wi-Fi/Bluetooth and hardware TensorFlow-Lite support. We leverage its M7 for preprocessing and the M4 for inference, achieving a tight 15 ms per frame latency while keeping power usage under 200 mW.
+    </p>
+
+    <!-- Logic Flow Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Pipeline Logic Flow</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/portenta-flow.jpg" alt="AI Logic Flow Diagram"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-6 text-left max-w-4xl mx-auto">
+      1) **Preprocessing**: Auto-contrast & Sobel gradients + learnable local contrast → 5-channel 96×96 tensor<br>
+      2) **Feature Extractor**: Four Conv2D+ReLU blocks with pooling → flattened 3 872-dim vector (~6.5 K params)<br>
+      3) **Regression Head**: Dense(64)+ReLU → Dropout → Dense(1) (~248 K params)<br>
+      4) **Control Loop**: Output drives PID on grip/flex motors; cycle repeats until sensor feedback stabilizes.
+    </p>
+
+    <!-- Python vs. Cloud Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">On-Device vs. Cloud Inference</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/python-vs-cloud.jpg" alt="Python vs Cloud Architecture"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-6 text-left max-w-4xl mx-auto">
+      We compared running our TinyML pipeline in MicroPython on the Portenta (≈15 ms/frame) against a cloud approach (MQTT+REST, ≈120 ms round-trip). On-device wins on latency, reliability, and offline operation, with no network dependency.
+    </p>
+
+    <!-- Model Training Subsection -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">Model Training</h3>
+    <div class="flex justify-center mb-8">
+      <img src="/pictures/model-training.jpg" alt="Model Training Workflow"
+           onclick="openModal(this.src)"
+           class="rounded shadow-md w-full md:w-1/2 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    </div>
+    <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+      We gathered ~5 000 labeled hand-object images under varied lighting, trained our custom CNN end-to-end in Python (TensorFlow), then applied pruning & quantization to fit the final ~200 KB TFLite model. This preserves accuracy while meeting the Portenta’s flash and RAM constraints.
+    </p>
+
+    <!-- Back Button -->
+    <div class="mt-10 text-center">
+      <button onclick="showSection('senior-design')" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Senior Design
+      </button>
+    </div>
+
+  </div>
+</section>
+
+    
+    <!-- Results Sub-Section -->
+    <section id="results-section" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Results</h2>
+        <p class="text-gray-700 mb-6">
+          Although the project did not achieve complete success, significant milestones were accomplished that we are proud to highlight.
+        </p>
+    
+        <!-- Force Response Calibration -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">Force Response Calibration</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/sensorpress.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          I was unable to claibrate the sensors using the test bed due to the stepper motor not shipping in time, I was still able to roughly calibrate the sensors using weights. I showcase the plot of the live feedback between each of the sensor. 
+        </p>
+    
+        <!-- Cross-Sensitivity Demonstration -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">Cross-Sensitivity Demonstration</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/sensorslow.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          By taking an average value of all the values from the sensors, we can determine an angled force on the grid of sensors. As the cup presses against the silicone at an angle, we notice a jump within the average sensor values. However, once the cup equalizes the pressure on the grid, the values come back to zero. This can be ultized to adjust the grip based on an angled pressure on the fingertips of the arm.
+        </p>
+    
+        <!-- Spin Coater Performance -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">Spin Coater Performance</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <img
+            src="/pictures/spincoaterpic.jpg"
+            alt="Spin Coater Uniformity"
+            onclick="openModal(this.src)"
+            class="rounded shadow-md w-full object-cover transform transition duration-300 hover:scale-105 cursor-pointer"
+          />
+        </div>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/spincoatervid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          The spin coater produced silicone layers with ±2 mm thickness variation. With adjustable speeds, presets were made to make repeatable sheets of silicone at varying thicknesses.
+        </p>
+    
+        <!-- AI Camera Angle Detection -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">AI Camera Angle Detection</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/aicam.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          Our TinyML model correctly identified object orientation over 90% of the time at 30 FPS. The prosthetic uses this real-time angle data to adjust wrist position before gripping.
+        </p>
+    
+        <!-- U-Joint Wrist Option Test -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">U-Joint Wrist Option Test</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/ujointresult.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          The U-joint mechanism delivered smooth flexion/extension across a 0–45° range with minimal backlash (<3°). Its spring-return design reliably reset to neutral between grips.
+        </p>
+    
+        <!-- Monopole Wrist Option Test -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">Monopole Wrist Option Test</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/monowrist.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          The monopole gear setup achieved two degrees of freedom but due to the 3D printed gears and the lack of a shaft collar, the motor began to stall and showed gears slipped. However, in the future, creating the gears using a cnc or injection molding will be most optimal. 
+        </p>
+    
+        <!-- Final Assembly Demonstration -->
+        <h3 class="text-2xl font-semibold mt-10 mb-4">Final Assembly Demonstration</h3>
+        <div class="max-w-4xl mx-auto mb-6">
+          <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+            <source src="/videos/finalvis.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-gray-700 mb-8 text-left max-w-4xl mx-auto">
+          In the fully assembled prosthetic, the arm was unable to simultaneously actuate all nine servos due to battery limitations. Despite this challenge, each team achieved remarkable results within their respective areas. Overall, this project served as a valuable learning experience in team leadership and navigating technologies beyond our initial expertise.
+        </p>
+    
+        <div class="mt-10 text-center">
+          <a
+            href="#"
+            onclick="showSection('senior-design')"
+            class="inline-block px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition"
+          >
+            Back to Senior Design
+          </a>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Generator Competition Section -->
+<!-- Generator Competition Section -->
+<section id="generator-competition" style="display: none;" class="py-16 px-6 text-center bg-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Wind Generator Competition</h2>
+    <img 
+    src="pictures/windturbine" 
+    alt="Hand with Sensor" 
+    class="w-full md:w-3/4 lg:w-1/2 mx-auto rounded-xl mb-8"
+  />
+
+    <p class="text-gray-700 mb-6">
+      For this design challenge we created a small‐scale horizontal‐axis wind turbine optimized for low‐wind urban environments. Below you can explore our theoretical performance estimates, mechanical design choices, and the competition results.
+    </p>
+
+    <!-- Nav Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 md:grid md:grid-cols-4 md:gap-4 max-w-3xl mx-auto mb-10">
+      <button onclick="showSection('generator-theory')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+        Theoretical Calculations
+      </button>
+      <button onclick="showSection('generator-mechanical')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+        Mechanical Design
+      </button>
+      <button onclick="showSection('generator-results')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">
+        Results
+      </button>
+      <button onclick="goBackToMain()" class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition text-center">Back</button>
+
+    </div>
+  </div>
+</section>
+
+<!-- Theoretical Calculations Subsection -->
+<section id="generator-theory" style="display: none;" class="py-16 px-6 bg-[#f9f9f9]">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Theoretical Calculations</h2>
+    <p class="text-gray-700 mb-8">
+      We began by modeling power output vs. wind speed using Betz’s law and blade element momentum theory. Our MATLAB scripts predicted peak efficiency at 8 m/s and a cut-in speed of 2 m/s.
+    </p>
+    <img src="/pictures/generator-theory-plot.png" alt="Power Curve Plot"
+         onclick="openModal(this.src)"
+         class="rounded shadow-md w-full md:w-2/3 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      The plot above shows estimated power vs. wind speed for our 0.5 m diameter rotor. We also calculated torque requirements and gear ratios to match our selected generator’s optimal RPM.
+    </p>
+    <div class="mt-10 text-center">
+      <button onclick="showSection('generator-competition')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Generator Competition
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Mechanical Design Subsection -->
+<section id="generator-mechanical" style="display: none;" class="py-16 px-6 bg-white">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Mechanical Design</h2>
+    <p class="text-gray-700 mb-8">
+      Our turbine uses a three-blade NACA 4412 airfoil, a 3D-printed hub, and a tail assembly for passive yaw control. Below you can explore the CAD model and the four detailed drawing sheets.
+    </p>
+
+    <!-- CAD Model -->
+    <h3 class="text-2xl font-semibold mb-4">CAD Model Overview</h3>
+    <img src="/pictures/generator-cad-model.jpg" alt="CAD Model" 
+         onclick="openModal(this.src)"
+         class="rounded shadow-md w-full md:w-2/3 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      This full-assembly CAD rendering shows how the hub, blades, shaft, and tail fit together. It was created in SolidWorks, with all mating features and fasteners fully defined for manufacturing.
+    </p>
+
+    <!-- Drawing Sheet 1 -->
+    <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 1: Hub & Shaft</h3>
+    <img src="/pictures/drawing-sheet1.png" alt="Hub & Shaft Drawing"
+         onclick="openModal(this.src)"
+         class="rounded shadow-md w-full md:w-1/2 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      Sheet 1 details the hub’s concentric bore, blade flange features, and key tolerance callouts. The shaft interface is dimensioned for a press fit with a 0.02 mm interference.
+    </p>
+
+    <!-- Drawing Sheet 2 -->
+    <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 2: Blade Profile</h3>
+    <img src="/pictures/drawing-sheet2.png" alt="Blade Profile Drawing"
+         onclick="openModal(this.src)"
+         class="rounded shadow-md w-full md:w-1/2 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      Sheet 2 shows the NACA 4412 airfoil section, blade twist distribution, and root/chord dimensions. Blade thickness tolerances are held to ±0.1 mm for aerodynamic consistency.
+    </p>
+
+    <!-- Drawing Sheet 3 -->
+    <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 3: Tail & Bearing Mount</h3>
+    <img src="/pictures/drawing-sheet3.png" alt="Tail & Bearing Mount Drawing"
+         onclick="openModal(this.src)"
+         class="rounded shadow-md w-full md:w-1/2 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      Sheet 3 outlines the tail fin geometry, swivel joint assembly, and bearing housing. All hole patterns and fastener specs are annotated for the stainless-steel mount.
+    </p>
+
+    <!-- Drawing Sheet 4 -->
+    <h3 class="text-2xl font-semibold mb-4">Drawing Sheet 4: Assembly & Exploded View</h3>
+    <img src="/pictures/drawing-sheet4.png" alt="Assembly Exploded View"
+         onclick="openModal(this.src)"
+         class="rounded shadow-md w-full md:w-1/2 mx-auto mb-6 object-cover transform transition duration-300 hover:scale-105 cursor-pointer" />
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      Sheet 4 provides an exploded-view diagram with part numbers, a bill of materials, and torque specs for all fasteners—perfect for assembly and inspection.
+    </p>
+
+    <!-- Back Button -->
+    <div class="mt-10 text-center">
+      <button onclick="showSection('generator-competition')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Generator Competition
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Results Subsection -->
+<section id="generator-results" style="display: none;" class="py-16 px-6 bg-[#f9f9f9]">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Competition Results</h2>
+    <p class="text-gray-700 mb-8">
+      We tested our turbine in a 5 m/s wind tunnel. Below is a video of the spin-up and power-meter readout.
+    </p>
+    <div class="max-w-4xl mx-auto mb-6">
+      <video class="w-full rounded shadow-md" autoplay loop muted playsinline>
+        <source src="/videos/generator-competition.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="text-gray-700 mb-10 text-left md:text-center">
+      The turbine reached steady-state RPM of 450 at 5 m/s, producing 4 W—about 80% of our theoretical prediction. Mechanical losses in the 3D-printed bearings explain most of the delta.
+    </p>
+    <div class="mt-10 text-center">
+      <button onclick="showSection('generator-competition')" 
+              class="px-6 py-3 bg-[#191A38] text-[#FFD700] rounded-xl hover:bg-[#111827] transition">
+        Back to Generator Competition
+      </button>
+    </div>
+  </div>
+</section>
+
+    <!-- Gearbox Design Section -->
+    <section id="gearbox-design" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Gearbox Design</h2>
+        <p class="text-gray-700">Details coming soon...</p>
+        <div class="mt-10 text-center">
+          <a href="#" onclick="goBackToMain()" class="inline-block px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition">Back to Top</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+
+    <!-- Mechantronics Car -->
+    <section id="mechatronics" style="display: none;" class="py-16 px-6 text-center bg-[#f9f9f9]">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Mechatronics Car</h2>
+        <p class="text-gray-700">Details coming soon...</p>
+        <div class="mt-10 text-center">
+          <a href="#" onclick="goBackToMain()" class="inline-block px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition">Back to Top</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
